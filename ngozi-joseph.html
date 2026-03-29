@@ -1771,7 +1771,7 @@
   }
 
   // ===== ACTIVE DOT TRACKING =====
-  const sections = ['home','story','colours','party','faq','location','donation'];
+  const sections = ['home','story','story2','party','faq','location','donation','watchlive'];
   const dots = document.querySelectorAll('.side-dot');
 
   document.getElementById('rightPanel').addEventListener('scroll', function() {
@@ -1785,6 +1785,34 @@
     const activeDot = document.querySelector(`.side-dot[data-target="${current}"]`);
     if (activeDot) activeDot.classList.add('active');
   });
+
+  // ===== WATCH LIVE — SMART DATE STATE =====
+  (function() {
+    const WEDDING      = new Date('2026-05-02T10:00:00'); // ceremony start
+    const STREAM_END   = new Date('2026-05-02T18:00:00'); // ~8 hrs later, flip to replay
+    const now          = new Date();
+
+    const pre    = document.getElementById('liveStatePre');
+    const active = document.getElementById('liveStateActive');
+    const post   = document.getElementById('liveStatePost');
+
+    if (now < WEDDING) {
+      // Before the wedding: show the pre-stream teaser
+      pre.style.display    = 'block';
+      active.style.display = 'none';
+      post.style.display   = 'none';
+    } else if (now >= WEDDING && now < STREAM_END) {
+      // Wedding day — show the live embed
+      pre.style.display    = 'none';
+      active.style.display = 'block';
+      post.style.display   = 'none';
+    } else {
+      // After the event — show replay card
+      pre.style.display    = 'none';
+      active.style.display = 'none';
+      post.style.display   = 'block';
+    }
+  })();
 
   // ===== FAQ TOGGLE =====
   function toggleFaq(el) {
@@ -1817,14 +1845,14 @@
 
   // ===== COUNTDOWN TIMER =====
   function updateCountdown() {
-    const wedding = new Date('2025-06-14T10:00:00').getTime();
+    const wedding = new Date('2026-05-02T10:00:00+01:00').getTime(); // WAT = UTC+1
     const now = new Date().getTime();
     const diff = wedding - now;
     if (diff <= 0) {
-      document.getElementById('cd-days').textContent = '00';
+      document.getElementById('cd-days').textContent  = '00';
       document.getElementById('cd-hours').textContent = '00';
-      document.getElementById('cd-mins').textContent = '00';
-      document.getElementById('cd-secs').textContent = '00';
+      document.getElementById('cd-mins').textContent  = '00';
+      document.getElementById('cd-secs').textContent  = '00';
       return;
     }
     const d = Math.floor(diff / (1000*60*60*24));
@@ -1839,12 +1867,6 @@
   updateCountdown();
   setInterval(updateCountdown, 1000);
 
-  // ===== NAVBAR SCROLL EFFECT =====
-  // (Left panel is fixed, so we watch the carousel scroll position indirectly)
-  // Keep navbar transparent on top slides, scroll effect simulated via carousel change
-  document.getElementById('weddingCarousel').addEventListener('slide.bs.carousel', () => {
-    // No-op; navbar always styled via CSS
-  });
 </script>
 </body>
 </html>
