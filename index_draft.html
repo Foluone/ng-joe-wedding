@@ -469,7 +469,40 @@
     }
 
     /* ===== OUR STORY 2===== */
-    #story2 { background: var(--choco-pale); }
+    #story2 { background: var(--choco-pale);  }
+    .story-entry {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      align-items: flex-start;
+    }
+    .story-dot {
+      flex-shrink: 0;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--sea-pale);
+      border: 2px solid var(--sea-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      color: var(--sea-dark);
+      margin-top: 2px;
+    }
+    .story-year {
+      font-family: 'Cinzel', serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      color: var(--sea-dark);
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+    .story-text {
+      font-size: 0.9rem;
+      line-height: 1.7;
+      color: #555;
+    }    
 
     /* ===== OUR COLOUR ===== */
     #colours { background: var(--choco-pale); }
@@ -767,307 +800,6 @@
       letter-spacing: 0.08em;
     }
 
-    /* ===== DONATION ===== */
-    #donation { background: var(--choco-pale); }
-    .donation-intro {
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      font-size: 1rem;
-      color: var(--choco-dark);
-      line-height: 1.8;
-      margin-bottom: 1.5rem;
-      border-left: 3px solid var(--choco-light);
-      padding-left: 1rem;
-    }
-    .bank-card {
-      background: #fff;
-      border-radius: 12px;
-      padding: 1.2rem;
-      margin-bottom: 0.8rem;
-      box-shadow: 0 2px 12px rgba(107,58,42,0.08);
-      border: 1px solid rgba(107,58,42,0.1);
-    }
-    .bank-logo {
-      width: 36px;
-      height: 36px;
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Cinzel', serif;
-      font-size: 0.75rem;
-      font-weight: 700;
-      color: #fff;
-      flex-shrink: 0;
-    }
-    .bank-details-wrap {
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
-    }
-    .bank-label {
-      font-size: 0.7rem;
-      letter-spacing: 0.1em;
-      color: #999;
-      text-transform: uppercase;
-    }
-    .bank-name {
-      font-family: 'Lato', sans-serif;
-      font-weight: 700;
-      color: var(--choco-dark);
-      font-size: 0.88rem;
-    }
-    .bank-account {
-      font-family: 'Cinzel', serif;
-      font-size: 1.1rem;
-      color: var(--sea-dark);
-      letter-spacing: 0.15em;
-      margin: 0.3rem 0;
-    }
-    .copy-btn {
-      font-size: 0.75rem;
-      padding: 0.25rem 0.6rem;
-      border: 1px solid var(--sea-light);
-      background: transparent;
-      color: var(--sea-dark);
-      border-radius: 4px;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-    .copy-btn:hover {
-      background: var(--sea-dark);
-      color: #fff;
-    }
-    .donation-footer {
-      text-align: center;
-      margin-top: 2rem;
-      padding-top: 1.5rem;
-      border-top: 1px solid rgba(107,58,42,0.15);
-    }
-    .donation-footer-names {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.6rem;
-      font-weight: 300;
-      color: var(--choco-dark);
-    }
-    .donation-footer-names em { font-style: italic; color: var(--sea); }
-    .footer-small {
-      font-size: 0.75rem;
-      color: #aaa;
-      letter-spacing: 0.1em;
-      margin-top: 0.5rem;
-    }
-
-    /* ===== FLOATING NAV DOTS (Right Panel) ===== */
-    .side-nav {
-      position: fixed;
-      right: 8px;
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: 200;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-    .side-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: rgba(107,58,42,0.25);
-      cursor: pointer;
-      transition: all 0.25s;
-      border: 1px solid rgba(107,58,42,0.3);
-    }
-    .side-dot.active {
-      background: var(--sea-dark);
-      transform: scale(1.3);
-    }
-    .side-dot:hover { background: var(--choco); }
-
-    /* ===== SCROLLBAR ===== */
-    .right-panel::-webkit-scrollbar { width: 4px; }
-    .right-panel::-webkit-scrollbar-track { background: var(--choco-pale); }
-    .right-panel::-webkit-scrollbar-thumb { background: var(--sea-light); border-radius: 2px; }
-
-    /* ===== RESPONSIVE ===== */
-    @media (max-width: 768px) {
-      .left-panel {
-        width: 100%;
-        height: 55vh;
-        position: relative;
-      }
-      .right-panel {
-        width: 100%;
-        margin-left: 0;
-      }
-      .wedding-wrapper { flex-direction: column; }
-      .slide-carousel { height: 55vh; }
-      .side-nav { display: none; }
-    }
-
-    /* ===== ANIMATIONS ===== */
-    @keyframes fadeSlideUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    .section-page { animation: fadeSlideUp 0.5s ease both; }
-
-    /* ===== ENGAGEMENT GALLERY ===== */
-    #gallery { background: var(--choco-pale); }
-
-    .gallery-top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 0.8rem;
-      margin-bottom: 1.4rem;
-    }
-    .gallery-count {
-      font-size: 0.75rem;
-      color: var(--choco-light);
-      letter-spacing: 0.08em;
-    }
-    .gallery-dl-all {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      background: var(--sea-dark);
-      color: #fff;
-      font-family: 'Lato', sans-serif;
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-decoration: none;
-      padding: 0.5rem 1rem;
-      border-radius: 6px;
-      transition: background 0.2s, transform 0.15s;
-    }
-    .gallery-dl-all:hover { background: var(--sea); color: #fff; transform: scale(1.02); }
-
-    /* Grid */
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 0.7rem;
-    }
-
-    .gallery-item {
-      border-radius: 10px;
-      overflow: hidden;
-      background: #fff;
-      box-shadow: 0 2px 10px rgba(107,58,42,0.10);
-      cursor: pointer;
-      position: relative;
-      transition: transform 0.22s, box-shadow 0.22s;
-    }
-    .gallery-item:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 22px rgba(107,58,42,0.18);
-    }
-
-    .gallery-thumb {
-      width: 100%;
-      aspect-ratio: 4/3;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.35s;
-    }
-    .gallery-item:hover .gallery-thumb { transform: scale(1.04); }
-
-    /* Hover overlay with download button */
-    .gallery-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to top, rgba(74,35,24,0.75) 0%, rgba(0,0,0,0) 50%);
-      display: flex;
-      align-items: flex-end;
-      justify-content: center;
-      padding-bottom: 0.6rem;
-      opacity: 0;
-      transition: opacity 0.25s;
-    }
-    .gallery-item:hover .gallery-overlay { opacity: 1; }
-    .gallery-dl-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      background: rgba(255,255,255,0.92);
-      color: var(--choco-dark);
-      font-family: 'Lato', sans-serif;
-      font-size: 0.65rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      text-decoration: none;
-      padding: 0.35rem 0.8rem;
-      border-radius: 20px;
-      transition: background 0.2s;
-    }
-    .gallery-dl-btn:hover { background: #fff; color: var(--choco-dark); }
-
-    /* Lightbox */
-    .lightbox {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.92);
-      z-index: 9999;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      padding: 1rem;
-    }
-    .lightbox.open { display: flex; }
-    .lightbox-img {
-      max-width: 100%;
-      max-height: 80vh;
-      border-radius: 8px;
-      box-shadow: 0 8px 40px rgba(0,0,0,0.6);
-      object-fit: contain;
-    }
-    .lightbox-close {
-      position: absolute;
-      top: 1rem; right: 1.2rem;
-      background: none; border: none;
-      color: #fff; font-size: 1.8rem;
-      cursor: pointer; line-height: 1;
-    }
-    .lightbox-nav {
-      position: absolute;
-      top: 50%; transform: translateY(-50%);
-      background: rgba(255,255,255,0.12);
-      border: 1px solid rgba(255,255,255,0.2);
-      color: #fff; border-radius: 50%;
-      width: 40px; height: 40px;
-      display: flex; align-items: center; justify-content: center;
-      cursor: pointer; font-size: 1rem;
-      transition: background 0.2s;
-    }
-    .lightbox-nav:hover { background: rgba(255,255,255,0.25); }
-    .lightbox-prev { left: 0.8rem; }
-    .lightbox-next { right: 0.8rem; }
-    .lightbox-footer {
-      margin-top: 1rem;
-      display: flex; align-items: center; gap: 1rem;
-    }
-    .lightbox-counter {
-      font-size: 0.75rem; color: rgba(255,255,255,0.6);
-      letter-spacing: 0.1em;
-    }
-    .lightbox-dl {
-      display: inline-flex; align-items: center; gap: 0.35rem;
-      background: var(--choco);
-      color: #fff;
-      font-size: 0.72rem; font-weight: 700;
-      letter-spacing: 0.08em;
-      text-decoration: none;
-      padding: 0.4rem 0.9rem;
-      border-radius: 20px;
-      transition: background 0.2s;
-    }
-    .lightbox-dl:hover { background: var(--choco-dark); color: #fff; }
-
     /* ===== WATCH LIVE ===== */
     #watchlive { background: #060e18; }
 
@@ -1213,7 +945,159 @@
     .live-post-desc {
       font-size: 0.85rem; color: rgba(255,255,255,0.6);
       line-height: 1.75; margin-bottom: 1.5rem;
+    }    
+
+    /* ===== DONATION ===== */
+    #donation { background: var(--choco-pale); }
+    .donation-intro {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1rem;
+      color: var(--choco-dark);
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+      border-left: 3px solid var(--choco-light);
+      padding-left: 1rem;
     }
+    .bank-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 1.2rem;
+      margin-bottom: 0.8rem;
+      box-shadow: 0 2px 12px rgba(107,58,42,0.08);
+      border: 1px solid rgba(107,58,42,0.1);
+    }
+    .bank-logo {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Cinzel', serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #fff;
+      flex-shrink: 0;
+    }
+    .bank-details-wrap {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .bank-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      color: #999;
+      text-transform: uppercase;
+    }
+    .bank-name {
+      font-family: 'Lato', sans-serif;
+      font-weight: 700;
+      color: var(--choco-dark);
+      font-size: 0.88rem;
+    }
+    .bank-account {
+      font-family: 'Cinzel', serif;
+      font-size: 1.1rem;
+      color: var(--sea-dark);
+      letter-spacing: 0.15em;
+      margin: 0.3rem 0;
+    }
+    .bank-acct {
+      font-family: 'Cinzel', serif;
+      font-size: 0.8rem;
+      color: var(--sea-dark);
+      letter-spacing: 0.12em;
+      margin: 0.3rem 0;
+    }
+    .copy-btn {
+      font-size: 0.75rem;
+      padding: 0.25rem 0.6rem;
+      border: 1px solid var(--sea-light);
+      background: transparent;
+      color: var(--sea-dark);
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .copy-btn:hover {
+      background: var(--sea-dark);
+      color: #fff;
+    }
+    .donation-footer {
+      text-align: center;
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(107,58,42,0.15);
+    }
+    .donation-footer-names {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 300;
+      color: var(--choco-dark);
+    }
+    .donation-footer-names em { font-style: italic; color: var(--sea); }
+    .footer-small {
+      font-size: 0.75rem;
+      color: #aaa;
+      letter-spacing: 0.1em;
+      margin-top: 0.5rem;
+    }
+
+    /* ===== FLOATING NAV DOTS (Right Panel) ===== */
+    .side-nav {
+      position: fixed;
+      right: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 200;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .side-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(107,58,42,0.25);
+      cursor: pointer;
+      transition: all 0.25s;
+      border: 1px solid rgba(107,58,42,0.3);
+    }
+    .side-dot.active {
+      background: var(--sea-dark);
+      transform: scale(1.3);
+    }
+    .side-dot:hover { background: var(--choco); }
+
+    /* ===== SCROLLBAR ===== */
+    .right-panel::-webkit-scrollbar { width: 4px; }
+    .right-panel::-webkit-scrollbar-track { background: var(--choco-pale); }
+    .right-panel::-webkit-scrollbar-thumb { background: var(--sea-light); border-radius: 2px; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .left-panel {
+        width: 100%;
+        height: 55vh;
+        position: relative;
+      }
+      .right-panel {
+        width: 100%;
+        margin-left: 0;
+      }
+      .wedding-wrapper { flex-direction: column; }
+      .slide-carousel { height: 55vh; }
+      .side-nav { display: none; }
+    }
+
+    /* ===== ANIMATIONS ===== */
+    @keyframes fadeSlideUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .section-page { animation: fadeSlideUp 0.5s ease both; }
   </style>
 </head>
 
@@ -1238,9 +1122,8 @@
         <a href="#party"    class="nav-link-item" onclick="scrollToSection('party')">Groomsmen &amp; Bridal Train</a>
         <a href="#faq"      class="nav-link-item" onclick="scrollToSection('faq')">FAQ</a>
         <a href="#location" class="nav-link-item" onclick="scrollToSection('location')">Location</a>
+        <a href="#watchlive" class="nav-link-item" onclick="scrollToSection('watchlive')">Watch Live</a>        
         <a href="#donation" class="nav-link-item" onclick="scrollToSection('donation')">Gift</a>
-        <a href="#gallery"  class="nav-link-item" onclick="scrollToSection('gallery')">Gallery</a>
-        <a href="#watchlive" class="nav-link-item" onclick="scrollToSection('watchlive')">Watch Live</a>
       </div>
     </nav>
 
@@ -1449,7 +1332,7 @@
         <div class="story-dot"><i class="bi bi-chat-heart"></i></div>
         <div>
           <span class="story-year">The shot(s) · 2024</span>
-          <p class="story-text">
+          <At class="story-text">
             Not long after, I made a post on our church singles page. She was the only one who responded—and that became our first real point of connection. <br />
             From there, I started getting to know her more, drawing closer, and eventually, after careful thought and a bit of “background check” 😄, I began to make my intentions known. I wanted her to understand that I wasn’t just around—I had a goal. <br />
             But it wasn’t easy. <br />
@@ -1664,14 +1547,8 @@
         </div>
       </div>
 
-      <div class="faq-item" style="background: linear-gradient(135deg, var(--sea-pale), #fff); border: 1px solid var(--sea-light);">
-        <div style="padding: 0.9rem 1.1rem; display:flex; align-items:center; gap:0.7rem;">
-          <i class="bi bi-telephone-fill" style="color:var(--sea-dark); font-size:1rem;"></i>
-          <div>
-            <div style="font-size:0.7rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--sea-light); margin-bottom:0.2rem;">RSVP By 15th April 2026</div>
-            <a href="tel:+2347064342234" style="font-family:'Cinzel',serif; font-size:1.05rem; color:var(--sea-dark); text-decoration:none; letter-spacing:0.08em; font-weight:700;">+234 706 434 2234</a>
-          </div>
-        </div>
+      <div >
+        <h1 class="faq-question">RSVP:  +234 706 434 2234</h1>
       </div>
       
     </section>
@@ -1694,7 +1571,7 @@
       <!-- Church -->
       <div class="location-card">
         <p class="location-event"><i class="bi bi-building me-1"></i> Church Ceremony</p>
-        <p class="location-name">St. Phillips Anglican Cathedral</p>
+        <p class="location-name">St. Phillips Anglican Cathedral </p>
         <p class="location-detail"><i class="bi bi-geo-alt-fill"></i> Asaba, Delta State </p>
         <p class="location-detail"><i class="bi bi-clock-fill"></i> 10:00 AM </p>
         <p class="location-detail"><i class="bi bi-calendar-event-fill"></i> Saturday, 2nd May 2026</p>
@@ -1716,26 +1593,6 @@
         <span style="font-size:0.7rem; color:#aaa; letter-spacing:0">Asaba, Delta State</span>
       </a>
     </section>
-
-
-
-    <!-- ENGAGEMENT GALLERY -->
-    <section class="section-page" id="gallery">
-      <span class="section-tag">Before The Big Day</span>
-      <h2 class="section-title">Engagement<br>Pictures</h2>
-      <div class="divider-line"><i class="bi bi-images"></i></div>
-
-      <div class="gallery-top">
-        <span class="gallery-count">30 photos · Click any to enlarge</span>
-        <a href="https://drive.google.com/drive/folders/1jiDJvtr9wLtTxhFBYHS18s9bGKilbfyj"
-           target="_blank" rel="noopener" class="gallery-dl-all">
-          <i class="bi bi-download"></i> Download All
-        </a>
-      </div>
-
-      <div class="gallery-grid" id="galleryGrid"></div>
-    </section>
-
 
     <!-- WATCH LIVE -->
     <section class="section-page" id="watchlive">
@@ -1829,7 +1686,7 @@
             <span class="bank-label">Providus Bank</span>
             <div class="bank-account" id="acc1">650 934 5525</div>
           </div>
-          <button class="copy-btn ms-auto" onclick="copyText('6509345525', this)"><i class="bi bi-copy me-1"></i>Copy</button>
+          <button class="copy-btn ms-auto" onclick="copyText('0123456789', this)"><i class="bi bi-copy me-1"></i>Copy</button>
         </div>
         <div style="font-size:0.78rem; color:#666; margin-top:0.5rem; padding-left:52px;">
           Account Name: <strong>Ajayi Joseph &amp; Ngozichukwu</strong>
@@ -1844,7 +1701,7 @@
             <span class="bank-label">Zelle</span>
             <div class="bank-acct" id="acc2">mafianangozi@yahoo.com</div>
           </div>
-          <button class="copy-btn ms-auto" onclick="copyText('', this)"><i class="bi bi-copy me-1"></i>Copy</button>
+          <button class="copy-btn ms-auto" onclick="copyText('9876543210', this)"><i class="bi bi-copy me-1"></i>Copy</button>
         </div>
         <div style="font-size:0.78rem; color:#666; margin-top:0.5rem; padding-left:52px;">
           
@@ -1860,42 +1717,25 @@
         <p class="footer-small">Thank you for being part of our journey.</p>
         <p class="footer-small" style="margin-top:0.3rem;">Saturday, 2nd May 2026 · Asaba, Nigeria</p>
       </div>
-    </section>    
+    </section>
 
   </div><!-- /right-panel -->
 
 </div><!-- /wedding-wrapper -->
 
-
-<!-- LIGHTBOX — outside all panels so z-index works correctly -->
-<div class="lightbox" id="lightbox" onclick="closeLightboxOutside(event)">
-  <button class="lightbox-close" onclick="closeLightbox()">×</button>
-  <button class="lightbox-nav lightbox-prev" onclick="shiftLight(-1)"><i class="bi bi-chevron-left"></i></button>
-  <img class="lightbox-img" id="lightboxImg" src="" alt="Engagement photo"/>
-  <button class="lightbox-nav lightbox-next" onclick="shiftLight(1)"><i class="bi bi-chevron-right"></i></button>
-  <div class="lightbox-footer">
-    <span class="lightbox-counter" id="lightboxCounter">1 / 30</span>
-    <a class="lightbox-dl" id="lightboxDl" href="#" target="_blank" rel="noopener">
-      <i class="bi bi-download"></i> Download
-    </a>
-  </div>
-</div>
-
 <!-- Side Navigation Dots -->
 <nav class="side-nav" id="sideNav">
   <div class="side-dot active"   data-target="home"     title="Home"    onclick="scrollToSection('home')"></div>
   <div class="side-dot"          data-target="story"    title="Story"   onclick="scrollToSection('story')"></div>
-  <div class="side-dot"          data-target="story2"  title="Joe's Story" onclick="scrollToSection('story2')"></div>
+  <div class="side-dot"          data-target="story2"  title="story2" onclick="scrollToSection('story2')"></div>
   <div class="side-dot"          data-target="party"    title="Party"   onclick="scrollToSection('party')"></div>
   <div class="side-dot"          data-target="faq"      title="FAQ"     onclick="scrollToSection('faq')"></div>
   <div class="side-dot"          data-target="location" title="Location" onclick="scrollToSection('location')"></div>
   <div class="side-dot"          data-target="donation" title="Gifts" onclick="scrollToSection('donation')"></div>
-  <div class="side-dot"          data-target="gallery"  title="Gallery" onclick="scrollToSection('gallery')"></div>
-  <div class="side-dot"          data-target="watchlive" title="Watch Live" onclick="scrollToSection('watchlive')"></div>
 </nav>
 
 <!-- Bootstrap JS -->
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
   // ===== NAV TOGGLE =====
@@ -1931,7 +1771,7 @@
   }
 
   // ===== ACTIVE DOT TRACKING =====
-  const sections = ['home','story','story2','party','faq','location','donation','gallery','watchlive'];
+  const sections = ['home','story','story2','party','faq','location','donation','watchlive'];
   const dots = document.querySelectorAll('.side-dot');
 
   document.getElementById('rightPanel').addEventListener('scroll', function() {
@@ -1944,94 +1784,6 @@
     dots.forEach(d => d.classList.remove('active'));
     const activeDot = document.querySelector(`.side-dot[data-target="${current}"]`);
     if (activeDot) activeDot.classList.add('active');
-  });
-
-  // ===== ENGAGEMENT GALLERY =====
-  const PHOTOS = [
-    '1-RyFTHtXmKvyLWULngO8k_zKBG7yfuQx',
-    '1ucVUusMWYgbBN5fLQN7c00MYbNuYAe9l',
-    '1x1G-s3RXVymlejg0EbJgPfbisCopllaD',
-    '1tkD4cgIFMNWIyDFAEhWvzh5QjvpA8QiP',
-    '1dXqlEsT4HidgYRFYa_SxBgPDdM1j8tct',
-    '1uaJ2RyZXk0C8e5vXZPgGQBLJwSAZLFQL',
-    '14Sf-4SB9jr9nRY1UNeZ22eoMznPMAPde',
-    '1eiMnOeH0r8m-10fWegIoBtXa2TcenjXY',
-    '1oCJEfdW5_f5udx__MohW7yZZ1j0AjFNe',
-    '1mjB7zFJeZAyWm5cMJzNV78HicvHg85rr',
-    '1uoyY09GI7_luCitZ_WRTo7ywUp3T9cS_',
-    '1Ki6q8rVneZH8yejZPKw2MhmnkV8B1B9K',
-    '1F9y0us-hJyY4-T26QcjzEl62o_uMpqQv',
-    '1TEWU-GnkDpzuAYBXHCb6gmQfGCvB5K9q',
-    '17cX9YQSYj7nwg-9Qav4SPCeLHItbZFUy',
-    '1wyVXQmNs7Yf83ho6sFljc6bpFJkLTsIz',
-    '1ew3Y0erKGgLghrydDncz0XBpxk4nhRVO',
-    '1OiasUasgrhaL2a_2v_2599hFto0lVTEL',
-    '1jx7oa8NfMrJp7KZCWVAlOPr6LJ39SdQz',
-    '1J6zCbQ_G_6RiSrlr9BCpvUuqyH-kx5Z4',
-    '10Cv4eaDZaqwQzECPcuZOE6hm63t63_5y',
-    '11tBTimF1kftRRZKByVMvWFFyS86X98QC',
-    '1VNCG3uRhQr0IdJitQNQ3Mz8PBRiqlBWR',
-    '1tr0rTs-YmRpjmQU2QkTDy5E36kl4ato2',
-    '1vFr4jufGBe9ep7yILniCRd0vSogOOy0l',
-    '1TdT8MOr9TQGkZiy_8UqldA6FeAN2BIQW',
-    '1WBsROTVXt-ztF_a_9vqOCxbZ6bpxqyIn',
-    '10Ok2K3w-89N8AYZk1iMvmL3d8uCwKdum',
-    '13FO5-sSdKzfkAR8uQOk9tVl5ED0SY_QA',
-    '12FE54bBQ0cmeQlzWYHFd61BerFB2SAsS'
-  ];
-
-  function thumbUrl(id)  { return `https://lh3.googleusercontent.com/d/${id}=w600`; }
-  function fullUrl(id)   { return `https://lh3.googleusercontent.com/d/${id}=w1600`; }
-  function dlUrl(id)     { return `https://drive.google.com/uc?export=download&id=${id}`; }
-
-  // Build grid
-  const grid = document.getElementById('galleryGrid');
-  PHOTOS.forEach((id, i) => {
-    const item = document.createElement('div');
-    item.className = 'gallery-item';
-    item.innerHTML = `
-      <img class="gallery-thumb" src="${thumbUrl(id)}" alt="Engagement photo ${i+1}" loading="lazy"/>
-      <div class="gallery-overlay">
-        <a class="gallery-dl-btn" href="${dlUrl(id)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">
-          <i class="bi bi-download"></i> Download
-        </a>
-      </div>`;
-    item.addEventListener('click', () => openLightbox(i));
-    grid.appendChild(item);
-  });
-
-  // Lightbox
-  let lightIndex = 0;
-
-  function openLightbox(i) {
-    lightIndex = i;
-    updateLightbox();
-    document.getElementById('lightbox').classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
-  function closeLightbox() {
-    document.getElementById('lightbox').classList.remove('open');
-    document.body.style.overflow = '';
-  }
-  function closeLightboxOutside(e) {
-    if (e.target === document.getElementById('lightbox')) closeLightbox();
-  }
-  function shiftLight(dir) {
-    lightIndex = (lightIndex + dir + PHOTOS.length) % PHOTOS.length;
-    updateLightbox();
-  }
-  function updateLightbox() {
-    const id = PHOTOS[lightIndex];
-    document.getElementById('lightboxImg').src      = fullUrl(id);
-    document.getElementById('lightboxDl').href      = dlUrl(id);
-    document.getElementById('lightboxCounter').textContent = `${lightIndex + 1} / ${PHOTOS.length}`;
-  }
-  // Keyboard navigation
-  document.addEventListener('keydown', e => {
-    if (!document.getElementById('lightbox').classList.contains('open')) return;
-    if (e.key === 'ArrowRight') shiftLight(1);
-    if (e.key === 'ArrowLeft')  shiftLight(-1);
-    if (e.key === 'Escape')     closeLightbox();
   });
 
   // ===== WATCH LIVE — SMART DATE STATE =====
